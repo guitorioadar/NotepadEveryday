@@ -1,4 +1,4 @@
-package com.androvaid.notepadeveryday;
+package com.example.SimpleSqliteExample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.androvaid.notepadeveryday;
+package com.example.SimpleSqliteExample;
 
 import org.junit.Test;
 
