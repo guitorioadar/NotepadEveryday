@@ -49,14 +49,20 @@ public class DeleteFragment extends Fragment {
         ContactDbHelper contactDbHelper = new ContactDbHelper(getActivity());
         SQLiteDatabase database = contactDbHelper.getWritableDatabase();
 
-        int id = Integer.parseInt(etContactId.getText().toString());
+        try{
+            int id = Integer.parseInt(etContactId.getText().toString());
+            contactDbHelper.deleteContact(id,database);
+            contactDbHelper.close();
 
-        contactDbHelper.deleteContact(id,database);
-        contactDbHelper.close();
+            Toast.makeText(getActivity(), "Delete Successful", Toast.LENGTH_SHORT).show();
 
-        Toast.makeText(getActivity(), "Delete Successful", Toast.LENGTH_SHORT).show();
+            etContactId.setText("");
+        }catch (Exception e){
+            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
-        etContactId.setText("");
+
+
 
     }
 
